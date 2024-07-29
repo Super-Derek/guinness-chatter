@@ -1,0 +1,25 @@
+# Ignore environment variables
+.env
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore log files
+*.log
+
+# Ignore node_modules directory (if using Node.js)
+node_modules/
+
+# Ignore compiled files
+*.o
+*.out
+*.class
+
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore IDE specific files
+.vscode/
+.idea/

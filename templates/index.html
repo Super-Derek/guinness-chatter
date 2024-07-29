@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2025 Analyst</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <header>
+            <h2>Project 2025 Analyst</h2>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <img id="theme-icon" src="{{ url_for('static', filename='images/sun-icon.png') }}" alt="Toggle Dark Mode">
+            </button>
+        </header>
+        <div class="chat-box" id="chat-box">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="chat-input">
+            <textarea id="user-input" placeholder="Type your message..."></textarea>
+            <button id="send-btn">Send</button>
+            <div id="spinner" class="spinner"></div>
+        </div>
+    </div>
+    <div class="info-text">
+        <p>This tool is designed to help you understand the implications of the Project 2025 Mandate, its policies, and their connections to The Heritage Foundation and Donald Trump. Our goal is to provide you with insights and facilitate your understanding of these proposed policies.</p>
+        <p><strong>Important Notice:</strong> While our AI strives to provide accurate information, it is not perfect. We strongly encourage you to read through the <a href="https://static.project2025.org/2025_MandateForLeadership_FULL.pdf" target="_blank" rel="noopener noreferrer">Project 2025 Mandate</a> yourself to form your own conclusions. Please note that within the current model, citations and page numbers may be inaccurate. We are actively working on improving this and hope to find a solution soon.</p>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
