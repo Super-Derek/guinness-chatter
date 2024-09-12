@@ -47,21 +47,6 @@ body {
     margin: 0;
 }
 
-/* Chat Container */
-.chat-container {
-    width: 100%;
-    max-width: 800px;
-    height: 90vh;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-}
-
 /* Header */
 header {
     background-color: var(--header-background);
@@ -90,43 +75,64 @@ header {
     height: 24px;
 }
 
+/* Chat Container */
+.chat-container {
+    width: 100%;
+    max-width: 800px;
+    height: 90vh;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
 /* Chat Box */
 .chat-box {
-    display: flex;
-    flex-direction: column; /* Ensure messages stack vertically */
+    flex: 1;
     padding: 15px;
     overflow-y: auto;
     overflow-x: hidden;
     background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
 }
 
 /* Chat Input */
 .chat-input {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     border-top: 1px solid #ddd;
-    position: relative;
+    padding: 0; /* Remove padding to ensure full height */
+    background-color: #fff;
 }
 
-textarea {
+/* Textarea */
+.chat-input textarea {
     flex: 1;
     border: none;
-    padding: 15px;
+    padding: 10px;
     resize: none;
     font-size: 1em;
     border-radius: 0 0 0 8px;
+    margin-right: 10px;
 }
 
+/* Send Button */
 button {
     border: none;
     background-color: var(--button-background);
     color: var(--header-text);
-    padding: 0;
+    padding: 0; /* Remove padding to fill vertical space */
     cursor: pointer;
     font-size: 1em;
     border-radius: 0 0 8px 0;
-    width: 60px;
     transition: background-color 0.3s ease;
+    width: 60px; /* Set a fixed width for the button */
+    height: 100%; /* Ensure it fills the container */
 }
 
 button:hover {
@@ -143,7 +149,7 @@ button:hover {
     height: 24px;
     animation: spin 2s linear infinite;
     position: absolute;
-    right: 20px;
+    right: 10px;
 }
 
 @keyframes spin {
@@ -196,7 +202,7 @@ button:hover {
     padding: 15px;
     text-align: left;
     overflow-y: auto;
-    max-height: 10vh; /* Limit height to allow scrolling */
+    max-height: 10vh;
 }
 
 .info-text p {
