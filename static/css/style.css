@@ -15,7 +15,7 @@
     --bot-message-text: #006064;
     --link-color: #0056b3;
     --link-hover-color: #004494;
-    --link-visited-color: #551a8b; /* Dark purple for visited links */
+    --link-visited-color: #551a8b;
 }
 
 /* Dark Mode Variables */
@@ -32,7 +32,7 @@ body.dark {
     --bot-message-text: #e0e0e0;
     --link-color: #809fff;
     --link-hover-color: #a0c4ff;
-    --link-visited-color: #b19cd9; /* Light purple for visited links in dark mode */
+    --link-visited-color: #b19cd9;
 }
 
 /* Base Styles */
@@ -51,7 +51,7 @@ body {
 .chat-container {
     width: 100%;
     max-width: 800px;
-    height: 80vh;
+    height: 90vh;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #fff;
@@ -59,7 +59,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px; /* Reduce margin-bottom */
+    margin-bottom: 10px;
 }
 
 /* Header */
@@ -67,7 +67,7 @@ header {
     background-color: var(--header-background);
     color: var(--header-text);
     padding: 15px;
-    padding-top: 10px;  /* Reduce padding-top */
+    padding-top: 10px;
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
@@ -92,7 +92,8 @@ header {
 
 /* Chat Box */
 .chat-box {
-    flex: 1;
+    display: flex;
+    flex-direction: column; /* Ensure messages stack vertically */
     padding: 15px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -102,9 +103,9 @@ header {
 /* Chat Input */
 .chat-input {
     display: flex;
-    align-items: center; /* Center align items */
+    align-items: stretch;
     border-top: 1px solid #ddd;
-    position: relative; /* Needed for positioning the spinner */
+    position: relative;
 }
 
 textarea {
@@ -120,10 +121,11 @@ button {
     border: none;
     background-color: var(--button-background);
     color: var(--header-text);
-    padding: 15px;
+    padding: 0;
     cursor: pointer;
     font-size: 1em;
     border-radius: 0 0 8px 0;
+    width: 60px;
     transition: background-color 0.3s ease;
 }
 
@@ -133,15 +135,15 @@ button:hover {
 
 /* Spinner */
 .spinner {
-    display: none; /* Hidden by default */
-    border: 4px solid #f3f3f3; /* Light grey */
-    border-top: 4px solid #3498db; /* Blue */
+    display: none;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
     border-radius: 50%;
     width: 24px;
     height: 24px;
     animation: spin 2s linear infinite;
     position: absolute;
-    right: 20px; /* Position spinner to the right inside the input box */
+    right: 20px;
 }
 
 @keyframes spin {
@@ -155,6 +157,7 @@ button:hover {
     margin: 5px 0;
     border-radius: 8px;
     max-width: 80%;
+    word-wrap: break-word;
 }
 
 .message.user {
@@ -189,9 +192,11 @@ button:hover {
 /* Info Text */
 .info-text {
     max-width: 800px;
-    margin-top: 10px; /* Reduce margin-top */
+    margin-top: 10px;
     padding: 15px;
     text-align: left;
+    overflow-y: auto;
+    max-height: 10vh; /* Limit height to allow scrolling */
 }
 
 .info-text p {
@@ -215,7 +220,7 @@ button:hover {
 @media (max-width: 768px) {
     .chat-container {
         max-width: 100%;
-        height: 60vh;
+        height: 85vh;
     }
 
     .chat-box {
@@ -234,18 +239,25 @@ button:hover {
 @media (max-width: 480px) {
     .chat-container {
         max-width: 100%;
-        height: 50vh;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
     }
 
     .chat-box {
+        flex: 1;
         padding: 10px;
+        overflow-y: auto;
     }
 
-    .chat-input textarea {
-        padding: 10px;
+    .chat-input {
+        padding: 0;
     }
 
-    .chat-input button {
-        padding: 10px;
+    .info-text {
+        position: relative;
+        top: 10px;
+        overflow-y: auto;
+        max-height: 10vh;
     }
 }

@@ -56,5 +56,13 @@ function appendMessage(sender, message) {
     messageElement.classList.add('message', sender);
     messageElement.innerHTML = message;
     chatBox.appendChild(messageElement);
-    chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
+    // Scroll to the end of the user's message
+    if (sender === 'bot') {
+        const userMessages = chatBox.getElementsByClassName('user');
+        const lastUserMessage = userMessages[userMessages.length - 1];
+        if (lastUserMessage) {
+            const offset = 150; // Adjust this value for more or less scrolling
+            chatBox.scrollTop = lastUserMessage.offsetTop - offset;
+        }
+    }
 }
