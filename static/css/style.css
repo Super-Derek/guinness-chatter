@@ -1,28 +1,28 @@
-/* Import Montserrat font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 /* Define CSS Variables */
 :root {
     --background-color: #f0f4f8;
     --text-color: #333;
-    --header-background: #005f73;
+    --header-background: #006b3f;
     --header-text: #fff;
-    --button-background: #005f73;
-    --button-hover: #0a9396;
-    --user-message-bg: #d8f3dc;
+    --button-background: #006b3f;
+    --button-hover: #00a862;
+    --user-message-bg: #ced4d9;
     --user-message-text: #1b4332;
-    --bot-message-bg: #e0f7fa;
+    --bot-message-bg: #e5f2ed;
     --bot-message-text: #006064;
     --link-color: #0056b3;
-    --link-hover-color: #004494;
-    --link-visited-color: #551a8b;
+    --link-hover-color: #006b3f;
+    --link-visited-color: #00a862;
 }
 
 /* Dark Mode Variables */
 body.dark {
     --background-color: #121212;
     --text-color: #e0e0e0;
-    --header-background: #1f2937;
+    --header-background: #192331;
     --header-text: #e0e0e0;
     --button-background: #1f2937;
     --button-hover: #374151;
@@ -56,7 +56,7 @@ header {
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Oswald', sans-serif;
     position: relative;
 }
 
@@ -108,6 +108,7 @@ header {
     border-top: 1px solid #ddd;
     padding: 0; /* Remove padding to ensure full height */
     background-color: #fff;
+    position: relative;
 }
 
 /* Textarea */
@@ -222,7 +223,7 @@ button:hover {
     text-decoration: underline;
 }
 
-/* Media Queries for Responsive Design */
+/* Media Queries for Tablet*/
 @media (max-width: 768px) {
     .chat-container {
         max-width: 100%;
@@ -242,6 +243,7 @@ button:hover {
     }
 }
 
+/* Media Queries for Mobile*/
 @media (max-width: 480px) {
     .chat-container {
         max-width: 100%;

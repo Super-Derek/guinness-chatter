@@ -1,4 +1,4 @@
-# Project 2025 Chatbot
+# Guinness Chatter
 
 ## Overview
 
@@ -23,8 +23,8 @@ This is a Flask-based chatbot application that uses OpenAI's API to generate res
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/Super-Derek/project2025-chatbot.git
-   cd project2025-chatbot
+   git clone https://github.com/Super-Derek/guinness-chatter.git
+   cd guinness-chatter
 
 2. **Create and activate a virtual environment:**
 

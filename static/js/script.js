@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         themeIcon.src = newTheme === 'dark' ? 'static/images/moon-icon.png' : 'static/images/sun-icon.png';
     });
 
-    appendMessage('bot', "Welcome! I'm here to help you understand Project 2025, its implications, and its connections to The Heritage Foundation and Donald Trump. Ask me anything!");
+    appendMessage('bot', "Welcome! I'm here to help you explore the exciting world of Guinness Records! Ask me anything!");
 });
 
 document.getElementById('send-btn').addEventListener('click', async () => {
@@ -22,7 +22,7 @@ document.getElementById('send-btn').addEventListener('click', async () => {
     appendMessage('user', userInput);
     document.getElementById('user-input').value = '';
 
-    // Show the spinner
+    // Show the spinner while loading message
     document.getElementById('spinner').style.display = 'block';
 
     try {
@@ -45,7 +45,7 @@ document.getElementById('send-btn').addEventListener('click', async () => {
         console.error("Error:", error);
         appendMessage('bot', "Sorry, there was an error processing your request.");
     } finally {
-        // Hide the spinner
+        // Hide the spinner when response is posted
         document.getElementById('spinner').style.display = 'none';
     }
 });
@@ -61,7 +61,7 @@ function appendMessage(sender, message) {
         const userMessages = chatBox.getElementsByClassName('user');
         const lastUserMessage = userMessages[userMessages.length - 1];
         if (lastUserMessage) {
-            const offset = 150; // Adjust this value for more or less scrolling
+            const offset = 150; 
             chatBox.scrollTop = lastUserMessage.offsetTop - offset;
         }
     }

@@ -20,7 +20,7 @@ system_prompt_content = os.getenv('SYSTEM_PROMPT')
 app = Flask(__name__)
 
 # Set up logging
-#logging.basicConfig(level=logging.INFO)  # Change to INFO or WARNING for production
+#logging.basicConfig(level=logging.INFO)
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s', handlers=[logging.FileHandler("app.log"), logging.StreamHandler()])
 
 @app.route('/')
@@ -44,7 +44,7 @@ def chat():
             frequency_penalty=0.5,
             presence_penalty=0.5,
             max_tokens=600,
-            timeout=120  # Set a higher timeout value
+            timeout=120 
         )
 
         bot_reply_markdown = response.choices[0].message.content.strip()
@@ -88,6 +88,6 @@ def chat():
         app.logger.error(f"General error: {e}")
         return jsonify(reply="An unexpected error occurred. Please try again later."), 500
 
-# The following block is only for development. In production, use a WSGI server like Gunicorn.
+# The following block is only for development. Production uses Gunicorn.
 if __name__ == '__main__':
     app.run(port=8000)
